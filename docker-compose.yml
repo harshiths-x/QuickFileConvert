@@ -1,0 +1,11 @@
+services:
+  quickfileconvert-backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      ENVIRONMENT: development
+      ALLOWED_ORIGINS: http://localhost:3000
+    tmpfs:
+      - /srv/app/temp:size=512m,mode=1777
+
